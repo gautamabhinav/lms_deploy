@@ -17,6 +17,13 @@ export const razorpay = new Razorpay({
   key_secret: process.env.RAZORPAY_SECRET,
 });
 
+// Create an order
+// export const options = {
+//   amount: 10000,  // Amount in paise (₹100.00)
+//   currency: 'INR',
+//   receipt: 'order_rcptid_11'
+// };
+
 const PORT = process.env.PORT || 5000;
 
 

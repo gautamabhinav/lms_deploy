@@ -46,7 +46,7 @@ export const verifyUserPayment = createAsyncThunk(
       });
       return res?.data;
     } catch (error) {
-      toast.error("error?.response?.data?.message");
+      toast.error(error?.response?.data?.message || "Payment verification failed");
     }
   }
 );
@@ -101,10 +101,15 @@ const razorpaySlice = createSlice({
       .addCase(getRazorPayId.fulfilled, (state, action) => {
         state.key = action?.payload?.key;
       })
+
       .addCase(purchaseCourseBundle.fulfilled, (state, action) => {
+        console.log("Subscription Response:", action.payload);
         state.subscription_id = action?.payload?.subscription_id;
       })
+      
       .addCase(verifyUserPayment.fulfilled, (state, action) => {
+        console.log("Verification Response:", action.payload);
+
         toast.success(action?.payload?.message);
         state.isPaymentVerified = action?.payload?.success;
       })

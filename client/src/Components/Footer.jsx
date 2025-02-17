@@ -1,5 +1,6 @@
 import React from "react";
 import { BsFacebook, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const newDate = new Date();
@@ -16,30 +17,30 @@ const Footer = () => {
 
         {/* adding the social media section */}
         <section className="flex items-center justify-center gap-5 text-2xl text-white">
-          <a
+          <Link
             className="hover:text-yellow-500 transition-all ease-in-out duration-300"
             href="#"
           >
             <BsFacebook />
-          </a>
-          <a
+          </Link>
+          <Link
             className="hover:text-yellow-500 transition-all ease-in-out duration-300"
             href="#"
           >
             <BsInstagram />
-          </a>
-          <a
+          </Link>
+          <Link
             className="hover:text-yellow-500 transition-all ease-in-out duration-300"
             href="#"
           >
             <BsTwitter />
-          </a>
-          <a
+          </Link>
+          <Link
             className="hover:text-yellow-500 transition-all ease-in-out duration-300"
             href="#"
           >
             <BsLinkedin />
-          </a>
+          </Link>
         </section>
       </footer>
     </>

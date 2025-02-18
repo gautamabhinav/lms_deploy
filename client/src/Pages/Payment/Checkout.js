@@ -56,8 +56,8 @@ const Checkout = () => {
       return;
     }
 
-    console.log("Razorpay Key:", razorPayKey);
-    console.log("Subscription ID:", subscription_id);
+    // console.log("Razorpay Key:", razorPayKey);
+    // console.log("Subscription ID:", subscription_id);
 
 
 //   const options = {
@@ -115,7 +115,7 @@ const Checkout = () => {
       description: "Monthly Subscription",
       handler: async function (response) {
 
-        console.log("Razorpay Response:", response);
+        // console.log("Razorpay Response:", response);
 
         paymentDetails.razorpay_payment_id = response.razorpay_payment_id;
         paymentDetails.razorpay_subscription_id =

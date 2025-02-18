@@ -77,7 +77,7 @@ const Contact = () => {
         error: "Failed to submit the form",
       });
       const contactResponse = await res;
-      console.log(contactResponse);
+      // console.log(contactResponse);
 
       // clearing the input fields after successfull submission of form
       if (contactResponse?.data?.success) {

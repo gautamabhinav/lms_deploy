@@ -31,7 +31,7 @@ const CreateCourse = () => {
     event.preventDefault();
     // getting the image
     const uploadedImage = event.target.files[0];
-    console.log(uploadedImage);
+    // console.log(uploadedImage);
 
     // if image exists then getting the url link of it
     if (uploadedImage) {
@@ -66,7 +66,7 @@ const CreateCourse = () => {
     // for creating a new course
     if (initialCourseData.newCourse) {
       //   checking for the empty fields
-      console.log(userInput);
+      // console.log(userInput);
       if (
         !userInput.title ||
         !userInput.category ||

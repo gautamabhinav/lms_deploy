@@ -103,12 +103,12 @@ const razorpaySlice = createSlice({
       })
 
       .addCase(purchaseCourseBundle.fulfilled, (state, action) => {
-        console.log("Subscription Response:", action.payload);
+        // console.log("Subscription Response:", action.payload);
         state.subscription_id = action?.payload?.subscription_id;
       })
       
       .addCase(verifyUserPayment.fulfilled, (state, action) => {
-        console.log("Verification Response:", action.payload);
+        // console.log("Verification Response:", action.payload);
 
         toast.success(action?.payload?.message);
         state.isPaymentVerified = action?.payload?.success;

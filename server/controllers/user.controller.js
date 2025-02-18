@@ -269,7 +269,7 @@ export const resetPassword = asyncHandler(async (req, res, next) => {
     return next(new AppError('Password is required', 400));
   }
 
-  console.log(forgotPasswordToken);
+  // console.log(forgotPasswordToken);
 
   // Checking if token matches in DB and if it is still valid(Not expired)
   const user = await User.findOne({

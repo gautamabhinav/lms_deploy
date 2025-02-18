@@ -44,7 +44,7 @@ export const authorizeRoles = (...roles) =>
 export const authorizeSubscribers = asyncHandler(async (req, _res, next) => {
   // If user is not admin or does not have an active subscription then error else pass
   const user = await User.findById(req.user.id)
-  console.log(user);
+  // console.log(user);
   // if (req.user.role !== "ADMIN" && req.user.subscription.status !== "active") {
   if (user.role !== "ADMIN" && user.subscription.status !== "active") {
     return next(new AppError("Please subscribe to access this route.", 403));

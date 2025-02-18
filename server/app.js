@@ -5,8 +5,13 @@ import { config } from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
 import errorMiddleware from './middlewares/error.middleware.js';
+import path from "path";
+
 
 const app = express();
+
+const _dirname = path.resolve();
+
 
 // Middlewares
 // Built-In
@@ -39,11 +44,16 @@ app.use('/api/v1/payments', paymentRoutes);
 app.use('/api/v1', miscRoutes);
 
 // Default catch all route - 404
-app.all('*', (_req, res) => {
-  res.status(404).send('OOPS!!! 404 Page Not Found');
-});
+// app.all('*', (_req, res) => {
+//   res.status(404).send('OOPS!!! 404 Page Not Found');
+// });
 
 // Custom error handling middleware
 app.use(errorMiddleware);
+
+app.use(express.static(path.join(_dirname, "/client/build")));
+app.get('*', (_,res) => {
+  res.sendFile(path.resolve(_dirname, "client", "build", "index.html"));
+});
 
 export default app;

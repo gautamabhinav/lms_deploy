@@ -193,7 +193,7 @@ export const removeLectureFromCourse = asyncHandler(async (req, res, next) => {
   // Grabbing the courseId and lectureId from req.query
   const { courseId, lectureId } = req.query;
 
-  console.log(courseId);
+  // console.log(courseId);
 
   // Checking if both courseId and lectureId are present
   if (!courseId) {

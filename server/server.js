@@ -2,7 +2,13 @@ import { v2 } from 'cloudinary';
 import Razorpay from 'razorpay';
 
 import app from './app.js';
+// import express from "./express";
 import connectToDB from './configs/dbConn.js';
+
+// import path from "path";
+
+
+// const _dirname = path.resolve();
 
 // Cloudinary configuration
 v2.config({
@@ -26,6 +32,13 @@ export const razorpay = new Razorpay({
 
 const PORT = process.env.PORT || 5000;
 
+// // Serve static files from the 'dist' directory
+// app.use(express.static(path.join(__dirname, "build")));
+
+// // Serve index.html for any route (SPA support)
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
 
 app.listen(PORT, async () => {
   // Connect to DB

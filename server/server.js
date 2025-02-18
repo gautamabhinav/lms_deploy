@@ -2,8 +2,9 @@ import { v2 } from 'cloudinary';
 import Razorpay from 'razorpay';
 
 import app from './app.js';
-// import express from "./express";
 import connectToDB from './configs/dbConn.js';
+
+const port = process.env.PORT || 10000;
 
 // import path from "path";
 
@@ -30,7 +31,7 @@ export const razorpay = new Razorpay({
 //   receipt: 'order_rcptid_11'
 // };
 
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
 
 // // Serve static files from the 'dist' directory
 // app.use(express.static(path.join(__dirname, "build")));
@@ -40,8 +41,8 @@ const PORT = process.env.PORT || 5000;
 //   res.sendFile(path.join(__dirname, "build", "index.html"));
 // });
 
-app.listen(PORT, async () => {
+app.listen(port, async () => {
   // Connect to DB
   await connectToDB();
-  console.log(`App is running at http://localhost:${PORT}`);
+  console.log(`App is running at http://localhost:${port}`);
 });
